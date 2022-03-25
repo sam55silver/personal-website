@@ -1,12 +1,20 @@
 import "./App.css";
-import novaScotia from "./images/nova-scotia.png";
-import Header from "./components/Header";
+import Navigation from "./components/Nav/Navigation";
+import Header from "./components/Header/Header";
+import Card from "./components/Card/Card";
 
 function App() {
   return (
     <div>
-      <img src={novaScotia} alt="Background" className="background-image" />
       <Header />
+      <Navigation />
+      <div className="page">
+        <Card />
+        <Card />
+        <Card />
+        <Card />
+        <Card />
+      </div>
     </div>
   );
 }
