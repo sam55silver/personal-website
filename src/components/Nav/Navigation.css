@@ -16,7 +16,7 @@
 }
 
 .nav-bar > h2:hover {
-  cursor: default;
+  cursor: pointer;
   color: #f64848;
 }
 
@@ -27,18 +27,18 @@
   justify-content: center;
 }
 
-.button-row > button {
+.button-row > a > button {
   margin: 0;
   border-style: none;
   background: none;
-  width: 12%;
+  width: 120px;
   height: 100%;
-  font-size: 1.5vw;
+  font-size: 22px;
   color: white;
   cursor: pointer;
 }
 
-.button-row > button:hover {
+.button-row > a > button:hover {
   color: #f64848;
 }
 
@@ -49,13 +49,14 @@
   justify-content: center;
 }
 
-.social-media > svg {
+.social-media > a > svg {
+  color: white;
   padding-left: 10px;
   padding-right: 10px;
   height: 30px;
 }
 
-.social-media > svg:hover {
+.social-media > a > svg:hover {
   cursor: pointer;
   color: #f64848;
 }
