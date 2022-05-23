@@ -1,8 +1,6 @@
-import "./Card.css";
-
 function Card() {
   return (
-    <div className="card">
+    <div>
       <h1>Header</h1>
       <p>Test</p>
       <p>Test</p>
