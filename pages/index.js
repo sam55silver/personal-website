@@ -1,10 +1,9 @@
-import type { NextPage } from "next";
 import { EyeIcon } from "@heroicons/react/solid";
 import Image from "next/image";
 import novaScotia from "../public/nova-scotia.png";
 import Link from "next/link";
 
-const Home: NextPage = () => {
+const Home = () => {
   return (
     <section className="h-[60rem] flex items-center">
       <header className="lg:container lg:mx-auto relative">

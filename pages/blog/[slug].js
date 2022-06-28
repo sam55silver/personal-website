@@ -1,9 +1,7 @@
 import React from "react";
 import fs from "fs";
 
-let slug: string;
-
-const BlogPost = ({ slug }: { slug: string }) => {
+const BlogPost = ({ slug }) => {
   return <div>{slug}</div>;
 };
 
@@ -25,11 +23,7 @@ export const getStaticPaths = async () => {
   };
 };
 
-export const getStaticProps = async ({
-  params: { slug },
-}: {
-  params: { slug: string };
-}) => {
+export const getStaticProps = async ({ params: { slug } }) => {
   return {
     props: { slug },
   };
