@@ -3,14 +3,14 @@ import { MenuAlt3Icon } from "@heroicons/react/solid";
 
 function Navigation() {
   return (
-    <section className="sticky top-0 bg-header z-10 p-6 font-sans">
+    <section className="sticky top-0 bg-header z-10 p-4 font-sans text-2xl">
       <nav className="flex px-4 py-2 lg:container lg:mx-auto text-white text-center items-center justify-between">
         <Link href="/">
-          <span className="font-bold text-xl hover:text-primary hover:cursor-pointer">
+          <span className="font-bold hover:text-primary hover:cursor-pointer">
             Sam Silver
           </span>
         </Link>
-        <div className="hidden md:flex gap-4 text-xl">
+        <div className="hidden md:flex gap-4">
           <Link href="/projects">
             <span className="hover:text-primary hover:cursor-pointer">
               Projects
