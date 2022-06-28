@@ -8,7 +8,7 @@ const Blog = ({ paths }) => {
       {paths.map((path) => {
         return (
           <div key={path}>
-            <Link href={`/blog/${path}`}>
+            <Link href="/blog/[slug]" as={"/blog/" + path}>
               <a>{path}</a>
             </Link>
           </div>
