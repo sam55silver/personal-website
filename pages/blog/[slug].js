@@ -1,8 +1,19 @@
 import React from "react";
 import fs from "fs";
+import path from "path";
+import * as matter from "gray-matter";
+import Head from "next/head";
+import { marked } from "marked";
 
-const BlogPost = ({ slug }) => {
-  return <div>{slug}</div>;
+const BlogPost = ({ markdownHtml, data }) => {
+  return (
+    <>
+      <Head>
+        <title>{data.title}</title>
+      </Head>
+      <div dangerouslySetInnerHTML={{ __html: markdownHtml }} />
+    </>
+  );
 };
 
 export const getStaticPaths = async () => {
@@ -24,8 +35,16 @@ export const getStaticPaths = async () => {
 };
 
 export const getStaticProps = async ({ params: { slug } }) => {
+  const markdownString = fs
+    .readFileSync(path.join("posts", slug + ".md"))
+    .toString();
+
+  const markdownParsed = matter(markdownString);
+
+  const markdownHtml = marked(markdownParsed.content);
+
   return {
-    props: { slug },
+    props: { markdownHtml, data: markdownParsed.data },
   };
 };
 
