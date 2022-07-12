@@ -6,9 +6,9 @@ function Navigation() {
     <section className="top-0 z-10 px-10 py-6 font-sans">
       <nav className="flex text-white text-center items-center justify-between">
         <Link href="/">
-          <span className="font-bold hover:text-primary hover:cursor-pointer text-2xl">
+          <strong className="font-bold hover:text-primary hover:cursor-pointer text-2xl">
             Sam Silver
-          </span>
+          </strong>
         </Link>
         <div className="hidden md:flex gap-4  text-xl">
           <Link href="/projects">

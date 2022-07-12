@@ -21,7 +21,7 @@ const Home = () => {
           business to client
         </h1>
         <Link href="/projects">
-          <button className="flex gap-2 mb-2 w-fit lg:gap-3 items-center bg-primary px-4 py-3 mt-5 rounded-md mx-auto">
+          <button className="flex gap-2 justify-center mb-2 w-36 lg:gap-3 items-center bg-primary px-4 py-3 mt-5 rounded-md mx-auto">
             <span className="text-sm lg:text-lg 2xl:text-2xl">My Work</span>
             <EyeIcon className="h-4 w-4 lg:h-5 lg:w-5" />
           </button>
