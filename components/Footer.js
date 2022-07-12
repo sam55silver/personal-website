@@ -1,46 +1,42 @@
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faInstagram,
-  faTwitter,
-  faGithub,
-  faLinkedin,
-} from "@fortawesome/free-brands-svg-icons";
+const fancyInputs = (isMessage) => {
+  let inputClasses =
+    "px-2 py-2 rounded hover:shadow-md focus:outline-none focus:shadow-md";
+
+  return isMessage ? (
+    <textarea className={inputClasses + " "} />
+  ) : (
+    <input className={inputClasses} />
+  );
+};
 
 function Footer() {
   return (
     <>
-      <div className="bg-gradient-to-b from-header to-secondary">
-        <div className="flex flex-col justify-end pb-28 lg:container lg:mx-auto text-white text-center items-center gap-5 h-[40rem]">
-          <span className="text-4xl">Contact Me</span>
-          <div className="gap-2 hidden md:flex">
-            <a href="https://github.com/sam55silver">
-              <FontAwesomeIcon
-                icon={faGithub}
-                className="md:h-5 md:w-5 hover:text-primary"
-              />
-            </a>
-            <a href="https://www.linkedin.com/in/sam-silver-375851239/">
-              <FontAwesomeIcon
-                icon={faLinkedin}
-                className="md:h-5 md:w-5 hover:text-primary"
-              />
-            </a>
-            <a href="https://twitter.com/sam55silver">
-              <FontAwesomeIcon
-                icon={faTwitter}
-                className="h-5 w-5 hover:text-primary"
-              />
-            </a>
-            <a href="https://www.instagram.com/sam_silver06/">
-              <FontAwesomeIcon
-                icon={faInstagram}
-                className="md:h-5 md:w-5 hover:text-primary"
-              />
-            </a>
+      <div className="flex flex-col justify-center text-center items-center gap-5 my-10">
+        <span className="text-5xl py-5">👋 Like what you see? lets talk!</span>
+        <div className="grid grid-rows-8 justify-start text-start my-5 gap-4 text-zinc-500">
+          <div className="grid grid-cols-2 gap-5">
+            <span>First Name</span>
+            <span>Last Name</span>
+          </div>
+          <div className="grid grid-cols-2 gap-5">
+            {fancyInputs()}
+            {fancyInputs()}
+          </div>
+          <span>Email</span>
+          {fancyInputs()}
+          <span>Message</span>
+          {fancyInputs(true)}
+          <div className="flex justify-center items-center mt-8">
+            <button className="bg-primary rounded text-white w-36 py-2 px-5 text-lg m-0 active:bg-darker-primary">
+              Submit
+            </button>
           </div>
         </div>
       </div>
-      {/* <div className="bg-gradient-to-b from-primary to-header h-32"></div> */}
+      <div className="bg-slate-200 text-center absolute w-full p-2">
+        <span>© 2023 by Sam Silver.</span>
+      </div>
     </>
   );
 }
