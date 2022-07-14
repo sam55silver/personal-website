@@ -4,9 +4,9 @@ date:
 description: This post will take you through how to make a cli command
 project: linux
 tags: bash,cool
+photo: cli-picture.png
+photoDesc: CLI Command
 ---
-
-![CLI Command](./cli-picture.png)
 
 First you create an .sh file.
 
