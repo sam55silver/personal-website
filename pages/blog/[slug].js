@@ -11,7 +11,10 @@ const BlogPost = ({ markdownHtml, data }) => {
       <Head>
         <title>{data.title}</title>
       </Head>
-      <div dangerouslySetInnerHTML={{ __html: markdownHtml }} />
+      <div
+        className="blog-post"
+        dangerouslySetInnerHTML={{ __html: markdownHtml }}
+      />
     </>
   );
 };

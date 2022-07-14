@@ -5,3 +5,11 @@
 body {
   @apply bg-base
 }
+
+.blog-post {
+  @apply container mx-auto w-3/4
+}
+
+.blog-post > p > img {
+  @apply my-5
+}
