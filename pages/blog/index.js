@@ -16,16 +16,11 @@ const PostHeader = ({ slug }) => {
 
 const Blog = ({ paths }) => {
   return (
-    <div className="lg:container lg:mx-auto relative flex">
-      <div className="w-1/4">
-        <h1>Blog</h1>
-      </div>
-      <div className="w-3/4">
-        <div className="grid grid-cols-2 gap-4">
-          {paths.map((path) => {
-            return PostHeader({ slug: path });
-          })}
-        </div>
+    <div className="flex flex-col justify-center items-center">
+      <div className="grid grid-cols-2 gap-4 w-3/4">
+        {paths.map((path) => {
+          return PostHeader({ slug: path });
+        })}
       </div>
     </div>
   );
