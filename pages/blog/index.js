@@ -27,7 +27,7 @@ const Blog = ({ paths }) => {
 };
 
 export const getStaticProps = async () => {
-  const paths = fs.readdirSync("posts");
+  const paths = fs.readdirSync("public/posts");
 
   return {
     props: { paths },

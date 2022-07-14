@@ -10,7 +10,7 @@ if [[ $POST_TITLE == "" ]]
     echo "Please provide a post title! : make-post {POST_TITLE}"
     exit -1
 # Throw an error if post title already exists
-elif [ -d "posts/$POST_TITLE" ]
+elif [ -d "public/posts/$POST_TITLE" ]
   then
     echo "Post already exists!"
     exit -1
@@ -32,8 +32,8 @@ tags:
 "
 
 # Create create a post folder and place a boilerplate text file insde
-mkdir posts/$POST_TITLE
-touch posts/$POST_TITLE/$POST_TITLE.md
-echo "$BOILER_PLATE" >> posts/$POST_TITLE/$POST_TITLE.md
+mkdir public/posts/$POST_TITLE
+touch public/posts/$POST_TITLE/$POST_TITLE.md
+echo "$BOILER_PLATE" >> public/posts/$POST_TITLE/$POST_TITLE.md
 
-code posts/$POST_TITLE
+code public/posts/$POST_TITLE

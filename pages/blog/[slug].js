@@ -16,17 +16,17 @@ const BlogPost = ({ markdownHtml, data }) => {
   );
 };
 
+// On build create the paths to each post
 export const getStaticPaths = async () => {
-  const files = fs.readdirSync("posts");
-  console.log("Files: ", files);
+  // Retrieve the posts' name
+  const files = fs.readdirSync("public/posts");
 
-  const paths = files.map((filename) => ({
+  // Map each post to have a slug
+  const paths = files.map((postTitle) => ({
     params: {
-      slug: filename.replace(".md", ""),
+      slug: postTitle,
     },
   }));
-
-  console.log("Paths: ", paths);
 
   return {
     paths,
@@ -34,20 +34,20 @@ export const getStaticPaths = async () => {
   };
 };
 
+// On build, get static data for the posts
 export const getStaticProps = async ({ params: { slug } }) => {
+  // Get post file
   const markdownString = fs
-    .readFileSync(path.join("posts", slug, slug + ".md"))
+    .readFileSync(path.join("public", "posts", slug, slug + ".md"))
     .toString();
 
-  console.log(markdownString);
-
+  // Parse post and separate the content in html string
   const markdownParsed = matter(markdownString);
+  let markdownHtml = marked(markdownParsed.content);
 
-  const markdownHtml = marked(markdownParsed.content);
-
-  const imagePaths = markdownHtml.matchAll(/img/g);
-
-  console.log("imagePaths: ", imagePaths);
+  // Use regex to find and replace img sources with the correct directory
+  const re = /(?<=<img src=")([^/]*)/g;
+  markdownHtml = markdownHtml.replace(re, path.join("..", "posts", slug));
 
   return {
     props: { markdownHtml, data: markdownParsed.data },
