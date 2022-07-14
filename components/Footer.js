@@ -59,11 +59,11 @@ function Footer() {
         <hr className="w-3/4 border-solid border-gray-200 border-2 rounded" />
         <button
           onClick={scrollToTop}
-          className="text-5xl hover:cursor-pointer mb-36 mt-10"
+          className="text-5xl hover:cursor-pointer my-10"
         >
           ☝️
         </button>
-        <p className="text-5xl pb-5">👋 Like what you see? lets talk!</p>
+        <p className="text-2xl pb-5">👋 Like what you see? lets talk!</p>
         <form
           onSubmit={formSubmit}
           className="grid grid-rows-8 justify-start text-start my-5 text-gray-200 gap-4"
