@@ -36,12 +36,18 @@ export const getStaticPaths = async () => {
 
 export const getStaticProps = async ({ params: { slug } }) => {
   const markdownString = fs
-    .readFileSync(path.join("posts", slug + ".md"))
+    .readFileSync(path.join("posts", slug, slug + ".md"))
     .toString();
+
+  console.log(markdownString);
 
   const markdownParsed = matter(markdownString);
 
   const markdownHtml = marked(markdownParsed.content);
+
+  const imagePaths = markdownHtml.matchAll(/img/g);
+
+  console.log("imagePaths: ", imagePaths);
 
   return {
     props: { markdownHtml, data: markdownParsed.data },

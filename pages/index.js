@@ -10,7 +10,6 @@ const Home = () => {
 
   return (
     <header className="flex flex-col items-center justify-center">
-      {/* md:left-0 2xl:left-32 */}
       <div className="my-8">
         <Image
           quality={100}

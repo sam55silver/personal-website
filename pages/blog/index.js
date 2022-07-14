@@ -27,8 +27,7 @@ const Blog = ({ paths }) => {
 };
 
 export const getStaticProps = async () => {
-  const files = fs.readdirSync("posts");
-  const paths = files.map((filename) => filename.replace(".md", ""));
+  const paths = fs.readdirSync("posts");
 
   return {
     props: { paths },
