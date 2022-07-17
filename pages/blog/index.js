@@ -5,15 +5,17 @@ import * as matter from "gray-matter";
 
 const PostHeader = ({ title, data }) => {
   return (
-    <div
-      key={title}
-      className="bg-secondary rounded-lg hover:shadow-lg hover:cursor-pointer p-6"
-    >
-      {/* <Link href="/blog/[slug]" as={`/blog/${title}`}> */}
-      <img src={`/posts/${title}/${data.photo}`} alt={data.photoDesc} />
-      <h2 className="text-xl text-white font-bold">{title}</h2>
-      {/* </Link> */}
-    </div>
+    <Link href="/blog/[slug]" as={`/blog/${title}`}>
+      <div
+        key={title}
+        className="bg-secondary rounded-lg hover:shadow-lg hover:cursor-pointer"
+      >
+        <img src={`/posts/${title}/${data.photo}`} alt={data.photoDesc} />
+        <div className="p-6">
+          <h2 className="text-xl text-white font-bold">{title}</h2>
+        </div>
+      </div>
+    </Link>
   );
 };
 
