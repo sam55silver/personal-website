@@ -1,6 +1,6 @@
 ---
 title: cool-stuff
-date:
+date: July 15th 2022
 description: Making cool things in react
 project: react-tutorial
 tags: Cool,Stuff,React

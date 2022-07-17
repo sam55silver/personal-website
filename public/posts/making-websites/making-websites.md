@@ -1,6 +1,6 @@
 ---
 title: making-websites
-date:
+date: July 17th 2022
 description: Making a production website
 project: react-tutorial
 tags: Cool,React,web dev

@@ -1,6 +1,6 @@
 ---
 title: creating-cli-commands
-date:
+date: July 16th 2022
 description: This post will take you through how to make a cli command
 project: linux
 tags: bash,cool
