@@ -6,6 +6,7 @@ project: react-tutorial
 tags: Cool,Stuff,React
 photo: random-pic.png
 photoDesc: A Random Photo
+emoji: 🏄‍♂️
 ---
 
 This is a post about making cool things in react.

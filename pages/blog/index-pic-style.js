@@ -3,24 +3,34 @@ import fs from "fs";
 import path from "path";
 import * as matter from "gray-matter";
 
-const PostHeader = ({ title, data }) => {
+const PostHeader = ({ title, data, firstItem }) => {
   return (
-    <Link href="/blog/[slug]" as={`/blog/${title}`}>
-      <div className="p-6 text-white h-full bg-very-dark-base rounded-md hover:shadow-lg hover:cursor-pointer flex items-center gap-6">
-        <span className="text-4xl">{data.emoji}</span>
-        <div className="grid grid-cols-2 w-full">
-          <h2 className="font-bold text-3xl">
-            {title.charAt(0).toUpperCase() +
-              title.slice(1).replaceAll("-", " ")}
-          </h2>
-          <p className="text-end">{data.date}</p>
-          <p className="text-lg mt-3">{data.description}</p>
-          <div className="flex justify-end items-end gap-2">
+    <div className="text-white hover:shadow-lg hover:cursor-pointer">
+      <Link href="/blog/[slug]" as={`/blog/${title}`}>
+        <div className="p-6 text-white h-full">
+          <img
+            src={`/posts/${title}/${data.photo}`}
+            alt={data.photoDesc}
+            className={`w-full ${firstItem ? "h-96" : "h-48"}`}
+          />
+          <div
+            className={`pt-6 ${
+              firstItem ? "flex justify-between items-center" : ""
+            }`}
+          >
+            <h2 className={`font-bold ${firstItem ? "text-4xl" : "text-3xl"}`}>
+              {title.charAt(0).toUpperCase() +
+                title.slice(1).replaceAll("-", " ")}
+            </h2>
+            <p className={firstItem ? "text-xl" : ""}>{data.date}</p>
+          </div>
+          <p className="py-4 text-lg">{data.description}</p>
+          <div className="flex gap-2">
             {data.tags.split(",").map((tag) => {
               return (
                 <span
                   key={tag}
-                  className="text-sm py-1 px-5 bg-darker-secondary rounded-full h-fit"
+                  className="text-sm py-1 px-5 bg-green-400 rounded-full"
                 >
                   {tag}
                 </span>
@@ -28,8 +38,8 @@ const PostHeader = ({ title, data }) => {
             })}
           </div>
         </div>
-      </div>
-    </Link>
+      </Link>
+    </div>
   );
 };
 
@@ -37,19 +47,25 @@ const Blog = ({ pathsAndData }) => {
   let posts = [];
   for (var pathIndex in pathsAndData) {
     const pathTitle = pathsAndData[pathIndex].title;
+    let firstItem = false;
+
+    if (pathIndex === "0") {
+      firstItem = true;
+    }
 
     posts.push(
       <PostHeader
         title={pathTitle}
         data={pathsAndData[pathIndex].data}
         key={pathTitle}
+        firstItem={firstItem}
       />
     );
   }
 
   return (
     <div className="flex flex-col justify-center items-center">
-      <div className="grid w-3/4 gap-4">{posts}</div>
+      <div className="grid grid-cols-2 w-3/4">{posts}</div>
     </div>
   );
 };

@@ -6,6 +6,7 @@ project: linux
 tags: bash,cool
 photo: cli-picture.png
 photoDesc: CLI Command
+emoji: 🤓
 ---
 
 First you create an .sh file.
