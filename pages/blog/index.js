@@ -8,13 +8,13 @@ const PostHeader = ({ title, data }) => {
     <Link href="/blog/[slug]" as={`/blog/${title}`}>
       <div className="p-6 text-white h-full bg-very-dark-base rounded-md hover:shadow-lg hover:cursor-pointer flex items-center gap-6">
         <span className="text-4xl">{data.emoji}</span>
-        <div className="grid grid-cols-2 w-full">
-          <h2 className="font-bold text-3xl">
+        <div className="grid grid-cols-3 w-full">
+          <h2 className="font-bold text-3xl col-span-2">
             {title.charAt(0).toUpperCase() +
               title.slice(1).replaceAll("-", " ")}
           </h2>
           <p className="text-end">{data.date}</p>
-          <p className="text-lg mt-3">{data.description}</p>
+          <p className="text-lg mt-3 col-span-2">{data.description}</p>
           <div className="flex justify-end items-end gap-2">
             {data.tags.split(",").map((tag) => {
               return (
