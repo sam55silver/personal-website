@@ -55,8 +55,8 @@ function Footer() {
   return (
     <footer className="text-white my-10">
       <Toaster />
-      <div className="flex flex-col justify-center text-center items-center gap-5 my-10 mt-20">
-        <hr className="w-3/4 border-solid border-gray-200 border-2 rounded" />
+      <div className="container mx-auto flex flex-col justify-center text-center items-center gap-5 my-10 mt-20">
+        <hr className="w-full border-solid border-gray-200 border-2 rounded" />
         <button
           onClick={scrollToTop}
           className="text-5xl hover:cursor-pointer my-10"

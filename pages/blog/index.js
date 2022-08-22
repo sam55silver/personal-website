@@ -48,8 +48,8 @@ const Blog = ({ pathsAndData }) => {
   }
 
   return (
-    <div className="flex flex-col justify-center items-center">
-      <div className="grid w-3/4 gap-4">{posts}</div>
+    <div className="container mx-auto">
+      <div className="grid w-full gap-4">{posts}</div>
     </div>
   );
 };
